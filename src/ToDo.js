@@ -13,3 +13,11 @@ ToDo.prototype.getItems = function() {
 ToDo.prototype.deleteTodo = function(itemId) {
 	this.todo = this.todo.filter(item => item.id !== itemId)
 };
+
+ToDo.prototype.completeItem = function(itemId) {
+	this.todo.filter(item => item.id === itemId)[0].complete = true
+};
+
+ToDo.prototype.isItemComplete = function(itemId) {
+	return this.todo.filter(item => item.id === itemId)[0].complete
+};
