@@ -43,4 +43,35 @@ describe('ToDo', () => {
 			expect(todo.isItemComplete(1)).toBe(true);
 		});
 	});
+
+	describe('Testing DOM manipulation', function() {
+		let Dom, item, todo;
+		beforeEach(function() {
+			todo = new ToDo();
+			Dom = new DomManipulation();
+			item = {
+				complete: false,
+				id: 1,
+				title: 'Awesome thing to do'
+			}
+		});
+
+		it('should initialise HTML', function() {
+			const form = document.createElement('form');
+			const input = document.createElement('input');
+			const ul = document.createElement('ul');
+			input.id = "AddItemInput";
+			form.id = "addItemForm";
+			form.appendChild(input);
+			expect(Dom.init().form).toEqual(form);
+			expect(Dom.init().ul).toEqual(ul);
+		});
+
+		it('should create item', function() {
+			const element = Dom.displayItem(item);
+			const result = document.createElement('li');
+			result.innerText = item.title;
+			expect(element).toEqual(result);
+		})
+	})
 });

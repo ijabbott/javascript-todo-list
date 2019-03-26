@@ -21,3 +21,23 @@ ToDo.prototype.completeItem = function(itemId) {
 ToDo.prototype.isItemComplete = function(itemId) {
 	return this.todo.find(item => item.id === itemId).complete
 };
+
+function DomManipulation() {}
+
+DomManipulation.prototype.init = function() {
+	const form = document.createElement('form');
+	const input = document.createElement('input');
+	const ul = document.createElement('ul');
+	input.id = "AddItemInput";
+	form.id = "addItemForm";
+	form.appendChild(input);
+	return {
+		form, ul
+	}
+};
+
+DomManipulation.prototype.displayItem = function (item) {
+	const li = document.createElement('li');
+	li.innerText = item.title
+	return li
+}
