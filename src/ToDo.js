@@ -10,6 +10,6 @@ ToDo.prototype.getItems = function() {
 	return this.todo
 };
 
-ToDo.prototype.deleteTodo = function() {
-	this.todo.pop()
+ToDo.prototype.deleteTodo = function(itemId) {
+	this.todo = this.todo.filter(item => item.id !== itemId)
 };
