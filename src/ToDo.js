@@ -15,9 +15,9 @@ ToDo.prototype.deleteTodo = function(itemId) {
 };
 
 ToDo.prototype.completeItem = function(itemId) {
-	this.todo.filter(item => item.id === itemId)[0].complete = true
+	this.todo.find(item => item.id === itemId).complete = true
 };
 
 ToDo.prototype.isItemComplete = function(itemId) {
-	return this.todo.filter(item => item.id === itemId)[0].complete
+	return this.todo.find(item => item.id === itemId).complete
 };
