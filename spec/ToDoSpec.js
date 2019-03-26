@@ -72,6 +72,21 @@ describe('ToDo', () => {
 			const result = document.createElement('li');
 			result.innerText = item.title;
 			expect(element).toEqual(result);
+		});
+
+		it('should trigger form and add item to todo array', function() {
+			const form = document.createElement('form');
+			form.innerHTML = `<input value="get milk" />
+				<button type="submit" />`;
+			document.body.appendChild(form);
+			const ul = document.createElement('ul');
+			Dom.addTodoEvent(
+				form,
+				todo.addTodo.bind(todo),
+				ul);
+			form.getElementsByTagName('button')[0].click();
+			document.body.removeChild(form);
+			expect(todo.todo[0].title).toEqual('get milk');
 		})
 	})
 });

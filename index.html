@@ -1,9 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Todo</title>
-</head>
-<body>
-</body>
-<script src="ToDo.js"></script>
+
+	<head>
+		<title>Todo</title>
+	</head>
+
+	<body>
+
+		<script src="src/ToDo.js"></script>
+
+		<script >
+			let Dom = new DomManipulation();
+			//let todo = new Todo();
+			let {form, ul} = Dom.init();
+			/*let todo = new ToDo();
+			let item = {
+				complete: false,
+				id: 1,
+				title: 'R0xx0rs all your s0xx0rs'
+			};*/
+
+
+			Dom.addTodoEvent(form, {id: 1, complete: false, title: "grab bear"}, ul)
+			document.body.appendChild(form);
+			/*const form = document.createElement('form');
+			form.innerHTML = `<input value="get milk" />
+							  <button type="submit" />`;
+			document.body.appendChild(form);*/
+
+			//const ul = document.createElement('ul');
+			/*Dom.addTodoEvent(
+			form,
+			todo.addTodo.bind(todo),
+			ul);
+
+
+			form.getElementsByTagName('button')[0].click();*/
+
+
+		</script>
+
+	</body>
+
 </html>
+
+<!--it('should trigger form and add item to todo array', function() {-->
+<!--const form = document.createElement('form');-->
+<!--form.innerHTML = `<input value="get milk" />-->
+<!--<button type="submit" />`;-->
+<!--document.body.appendChild(form);-->
+<!--const ul = document.createElement('ul');-->
+<!--Dom.addTodoEvent(-->
+<!--form,-->
+<!--todo.addTodo.bind(todo),-->
+<!--ul);-->
+<!--form.getElementsByTagName('button')[0].click();-->
+<!--document.body.removeChild(form);-->
+<!--expect(todo.todo[0].title).toEqual('get milk');-->
+<!--})-->
